@@ -10,21 +10,9 @@
 npm install --save react-keyword-cloud
 ```
 
-## Usage
+## Usage & Storybook examples
 
-```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'react-keyword-cloud'
-
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
-```
+https://saurabhnemade.github.io/react-keyword-cloud/
 
 ## License
 
