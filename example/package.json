@@ -5,11 +5,14 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "d3-scale": "^3.0.0",
+    "d3-scale-chromatic": "^1.3.3",
     "prop-types": "^15.6.2",
+    "random-words": "^1.1.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "^1.1.4",
-    "react-keyword-cloud": "link:.."
+    "react-keyword-cloud": "link:..",
+    "react-scripts": "^1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

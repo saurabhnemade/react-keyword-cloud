@@ -57,5 +57,12 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "d3-cloud": "^1.2.5",
+    "d3-scale": "^3.0.0",
+    "d3-scale-chromatic": "^1.3.3",
+    "d3-selection": "^1.4.0",
+    "react-faux-dom": "^4.5.0"
+  }
 }
