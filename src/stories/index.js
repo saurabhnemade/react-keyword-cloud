@@ -2,10 +2,12 @@ import React from 'react';
 
 import { storiesOf,addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { withKnobs, text, boolean, number, object } from '@storybook/addon-knobs';
 import KeywordCloud from "./../index";
 import generateRandomData from "./data";
 
 addDecorator(withInfo);
+addDecorator(withKnobs);
 
 storiesOf("Keyword Cloud", module)
   .add("Default minimum", () => (
@@ -16,11 +18,15 @@ storiesOf("Keyword Cloud", module)
       width={900}
       data={generateRandomData()}/>
   ))
-  .add("Custom Height", () => (
-    <KeywordCloud
-      height={300}
-      data={generateRandomData()}/>
-  ))
+  .add("Custom Height", () => {
+    const height = number("height", 300);
+    const data = object("data", [...generateRandomData()]);
+    return (
+      <KeywordCloud
+        height={height}
+        data={data}/>
+    );
+  })
   .add("Custom Width and Height", () => (
     <KeywordCloud
       width={900}

@@ -5,6 +5,7 @@ import cloud from 'd3-cloud';
 import { scaleOrdinal } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
 import { select } from 'd3-selection';
+import cloneDeep from "lodash/cloneDeep";
 
 const fontSize =  word => word.value;
 
@@ -77,6 +78,8 @@ class KeywordCloud extends Component {
       onKeyWordMouseOut,
     } = this.props;
 
+    const clonedData = cloneDeep(data);
+
     const fillColor = this.getColorFiller();
 
     select(this.keywordCloud)
@@ -86,7 +89,7 @@ class KeywordCloud extends Component {
     const layout = cloud()
       .size([width, height])
       .font(font)
-      .words(data)
+      .words(clonedData)
       .timeInterval(1000)
       .padding(padding)
       .rotate(rotate)
