@@ -229,7 +229,7 @@ storiesOf("Keyword Cloud", module)
     </ResponsiveContainer>
 
   ))
-  .add("another case", () => (
+  .add("No Random Pattern", () => (
     <KeywordCloud
       rotate={(d) => { return d.positions }}
       fontSize={d => {
