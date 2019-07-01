@@ -241,5 +241,5 @@ storiesOf("Keyword Cloud", module)
       random={function(d) {return 0.5} }
       width={900}
       height={600}
-      data={data}/>
+      data={data2}/>
   ));
