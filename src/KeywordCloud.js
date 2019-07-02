@@ -98,13 +98,16 @@ class KeywordCloud extends Component {
       .padding(padding)
       .rotate(rotate)
       .fontSize(fontSize)
-      .random(random)   // this is to disable random generation. TODO: Make it configurable
+      .random(random)
       .spiral(spiral)
       .on('end', words => {
         const texts = select(this.keywordCloud)
           .append('svg')
           .attr('width', layout.size()[0])
           .attr('height', layout.size()[1])
+          .attr('viewBox', '0 0 ' + layout.size()[0] + ' ' + layout.size()[1])
+          .style('width', '100%')
+          .style('height', '100%')
           .append('g')
           .attr(
             'transform',
