@@ -82,7 +82,6 @@ class KeywordCloud extends Component {
     } = this.props;
 
     const clonedData = cloneDeep(data);
-    console.log(clonedData);
 
     const fillColor = this.getColorFiller();
 
