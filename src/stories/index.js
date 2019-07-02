@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf,addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text, boolean, number, object } from '@storybook/addon-knobs';
-import {KeywordCloud, ResponsiveContainer} from "../index";
+import KeywordCloud from "../index";
 import generateRandomData from "./data";
 
 const data = [{"text":"Pick","value":80},{"text":"He","value":30},{"text":"Package","value":60},{"text":"Day","value":10},{"text":"Necessary","value":40},{"text":"Apple","value":10},{"text":"Worry","value":60},{"text":"Danger","value":30},{"text":"Spider","value":20},{"text":"Job","value":50},{"text":"Quiet","value":20},{"text":"Younger","value":80},{"text":"Become","value":50},{"text":"Citizen","value":60},{"text":"Clothes","value":40},{"text":"Compound","value":40},{"text":"Depth","value":50},{"text":"Metal","value":50},{"text":"Chapter","value":20},{"text":"Bend","value":60},{"text":"Main","value":10},{"text":"Stick","value":20},{"text":"Truth","value":20},{"text":"Corn","value":20},{"text":"Salt","value":50},{"text":"Local","value":40},{"text":"Slipped","value":80},{"text":"Wool","value":10},{"text":"Mysterious","value":80},{"text":"Bite","value":30},{"text":"Solve","value":60},{"text":"Exclaimed","value":50},{"text":"Soldier","value":80},{"text":"Steep","value":10},{"text":"Hay","value":60},{"text":"Substance","value":20},{"text":"Needed","value":30},{"text":"Claws","value":30},{"text":"Fifteen","value":40},{"text":"Low","value":80}];
@@ -211,23 +211,20 @@ storiesOf("Keyword Cloud", module)
       data={generateRandomData()}/>
   ))
   .add("Resize", () => (
-    <ResponsiveContainer minHeight={300} minWidth={400}>
-      <KeywordCloud
-        rotate={d => {
-          const positions = [0,270]
-          return positions[Math.floor(Math.random() * positions.length)];
-        }}
-        fontSize={d => {
-          if(d.value > 50) {
-            return d.value*10;
-          }
-          return d.value;
-        }}
-        width={900}
-        height={600}
-        data={generateRandomData()}/>
-    </ResponsiveContainer>
-
+    <KeywordCloud
+      rotate={d => {
+        const positions = [0,270]
+        return positions[Math.floor(Math.random() * positions.length)];
+      }}
+      fontSize={d => {
+        if(d.value > 50) {
+          return d.value*10;
+        }
+        return d.value;
+      }}
+      width={900}
+      height={600}
+      data={generateRandomData()}/>
   ))
   .add("No Random Pattern", () => (
     <KeywordCloud
